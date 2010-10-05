@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  neme: MyString
+  name: MyString
   description: MyText
   image_url: MyString
 
 two:
-  neme: MyString
+  name: MyString
   description: MyText
   image_url: MyString

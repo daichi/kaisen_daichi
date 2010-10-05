@@ -1,7 +1,7 @@
 class CreateProducts < ActiveRecord::Migration
   def self.up
     create_table :products do |t|
-      t.string :neme
+      t.string :name
       t.text :description
       t.string :image_url
 
