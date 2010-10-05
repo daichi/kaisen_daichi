@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Neme:
+  = @product.neme
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Image url:
+  = @product.image_url
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
