@@ -8,6 +8,6 @@ class Product < ActiveRecord::Base
 
   private
   def price_must_be_a_multiple_of_hundreds
-    errors.add(:price,"error") if :price % 100 != 0
+    errors.add(:price,"error") if :price % 100 <> 0
   end
 end
