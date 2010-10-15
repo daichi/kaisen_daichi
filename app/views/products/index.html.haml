@@ -6,7 +6,7 @@
     %th Description
     %th Image url
     %th Price
-    %th
+    %th recommended
     %th
 
   - @products.each do |product|
@@ -15,6 +15,7 @@
       %td= simple_format(product.description)
       %td= image_tag(product.image_url)
       %td= product.price
+      %td= product.recommended
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
