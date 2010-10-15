@@ -1,4 +1,6 @@
 KaisenDaichi::Application.routes.draw do
+  resources :shops
+
   resources :products
 
   # The priority is based upon order of creation:
