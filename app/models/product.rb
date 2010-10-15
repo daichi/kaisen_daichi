@@ -3,4 +3,5 @@ class Product < ActiveRecord::Base
   validates_numericality_of :price, :greater_than => 0, :only_integer => true
   validates_format_of :image_url, :with => %r{\.(gif|jpg|png)\Z}i,
                       :message => "はGIF,JPG,PNG画像のURLでなければなりません"
+  validates_uniquness_of :name
 end
