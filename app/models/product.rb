@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
   scope :for_sale, :order => "created_at DESC"
   scope :name_like, lambda {|q| {:conditions => ['name like ?', "%#{q}%"]}}
 
+  scope :recent, lambda {|num| {:limit => num, :order => "created_at DESC"}}
+
   private
   def price_must_be_a_multiple_of_hundreds
     errors.add(:price, "must be a multiple of hundreds") unless price % 100 == 0
