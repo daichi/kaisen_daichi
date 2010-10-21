@@ -5,9 +5,16 @@ class Product < ActiveRecord::Base
                       :message => "はGIF,JPG,PNG画像のURLでなければなりません"
   validates_uniqueness_of :name
   validate :price_must_be_a_multiple_of_hundreds
+  
+  scope :for_sale, :order => "created_at DESC"
+  scope :name_like, lambda {|q| {:conditions => ['name like ?', "%#{q}%"]}}
 
   private
   def price_must_be_a_multiple_of_hundreds
     errors.add(:price, "must be a multiple of hundreds") unless price % 100 == 0
+  end
+
+  class User < ActiveRecord::Base
+    scope :active, :condition => {:deleted => nil}
   end
 end
