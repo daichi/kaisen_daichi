@@ -1,4 +1,6 @@
 KaisenDaichi::Application.routes.draw do
+  resources :categories
+
   get "store/index"
   get "store" => "store#index" , :as => :store
 

@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  belongs_to :category  
+
   validates_presence_of :name, :description, :image_url
   validates_numericality_of :price, :greater_than => 0, :only_integer => true
   validates_format_of :image_url, :with => %r{\.(gif|jpg|png)\Z}i,
@@ -19,4 +21,8 @@ class Product < ActiveRecord::Base
   class User < ActiveRecord::Base
     scope :active, :condition => {:deleted => nil}
   end
+
+ # def category_name
+ #   return category ? category.name : ""
+ # end
 end

@@ -57,3 +57,6 @@ body {
   padding-top: 10px;
 }
 
+#store .product .button_to {
+  text-align: right;
+}
