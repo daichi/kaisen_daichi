@@ -60,3 +60,16 @@ body {
 #store .product .button_to {
   text-align: right;
 }
+
+.cart-title {
+  font-size: 130%;
+}
+
+.item-price, .total-line {
+  text-align: right;
+}
+
+.total-line, .total-call {
+  font-weight: bold;
+  border-top: 1px solid;
+}
