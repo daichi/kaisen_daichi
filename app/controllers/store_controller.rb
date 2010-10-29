@@ -8,19 +8,26 @@ before_filter :set_cart
   def add_to_cart
     @product = Product.find(params[:id])
     @cart.add_product(@product)
-    redirect_to store_path :notice => "#{@product.name}が買い物カゴに追加されました"
+    #redirect_to store_path :notice => "#{@product.name}が買い物カゴに追加されました"
+    respond_to do |format|
+      format.js
+    end
   end
 
   def empty_cart
-    session[:cart] = nil
-    redirect_to store_path, :notice => "カートは現在空です"
+    @cart.empty!
+    respond_to do |format|
+      format.js
+    end
   end 
   
   def remove_item_from_cart
     product = Product.find(params[:id])
     # ここにカートからカートアイテムを削除する処理を記述
     @cart.remove_product(product)
-    redirect_to store_path, :notice => "#{product.name}を買い物カゴから削除しました"
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
