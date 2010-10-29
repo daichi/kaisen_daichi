@@ -5,17 +5,7 @@
 %p= @product.name
 
 %table
-  - @cart.items.each do |item|
-    %tr
-      %td
-        = item.name
-        &times;
-        = item.quantity
-      %td.item-price
-        = number_with_delimiter(item.price)
-        円
-      %td
-        = button_to "この商品をキャンセル", :action => "remove_item_from_cart" ,:id => item.product_id
+  = render :partial => "cart_item", :collection => @cart.items
 
   %tr.total-line
     %td 合計 )

@@ -1,0 +1,11 @@
+%tr
+  %td
+    = cart_item.name
+    &times;
+    = cart_item.quantity
+  %td.item-price
+    = cart_item.price
+    円
+  %td
+    = button_to "この商品をキャンセル", :action => "remove_item_from_cart" ,:id => cart_item.product_id
+

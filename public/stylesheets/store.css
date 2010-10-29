@@ -73,3 +73,14 @@ body {
   font-weight: bold;
   border-top: 1px solid;
 }
+
+#cart, #cart table {
+  padding: 10px;
+  font-size: 90%
+}
+
+#carttable {
+  border-top: 1px dotted;
+  border-bottom: 1px dotted;
+  margin-bottom: 10px;
+}
