@@ -7,8 +7,8 @@
     != stylesheet_link_tag 'reset', 'text', '960', 'store'
     != javascript_include_tag :defaults
     != csrf_meta_tag
-  %body
-    %div#store.container_12
+  %body#store.container_12
+    %div#header.grid_12
       %h1
         買鮮カタログ
 
@@ -28,7 +28,7 @@
           %li
             %a{:href => "#"}ご利用ガイド
 
-      %div#main.grid_7.suffix_2
+      %div#main.grid_6.suffix_3
         - if flash[:notice]
           %div#notice= flash[:notice]
         != yield

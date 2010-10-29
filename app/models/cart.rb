@@ -8,6 +8,10 @@ class Cart
     end
   end
   
+  def remove_product(product)
+    items.reject!{|item| item.product_id == product.id}
+  end
+
   def items
     @items ||= []
   end
