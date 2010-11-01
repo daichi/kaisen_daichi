@@ -1,0 +1,26 @@
+%div.depot-form
+  = error_messages_for 'order'
+
+  - form_for :order, :url => {:action => :save_order } do |form|
+    %fieldset
+      %legend あなたのお届け先情報をご記入ください
+
+      %div
+        =form.label :name, "お名前:"
+        =form.text_field :name, :size => 40
+
+      %div
+        =form.label :address, "ご住所:"
+        =form.text_area :address, :rows => 3, :cols => 40
+
+      %div
+        =form.label :email, "Eメール:"
+        =form.text_field :email, :size => 40
+
+      %div
+        = form.label :pay_type, "お支払い:"
+        = form.select :pay_type, Order::PAYMENT_TYPES, :prompt => "お支払い方法を選択してください"
+
+        /= form.select :pay_type, [["現金", "checkout"],["クレジットカード","cc"]], :prompt => "お支払い方法を選択してください"
+
+        =submit_tag "注文する", :class => "submit"
