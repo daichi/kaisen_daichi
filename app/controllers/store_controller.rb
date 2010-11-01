@@ -30,6 +30,10 @@ before_filter :set_cart
     end
   end
 
+  def suppliers
+    @suppliers = Shop.all
+  end
+
   private
   def current_cart
     session[:cart] ||= Cart.new

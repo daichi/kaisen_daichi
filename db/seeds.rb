@@ -5,6 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-["魚","肉","野菜","スイーツ"].each do |category_name|
-  Category.create!(:name => category_name) unless Category.find_by_name(category_name)
+
+
+#["魚","肉","野菜","スイーツ"].each do |category_name|
+#  Category.create!(:name => category_name) unless Category.find_by_name(category_name)
+#end
+
+Product.all.each do |product|
+    product.update_attribute(:shop_id, Shop.all.shuffle.first.id)
 end

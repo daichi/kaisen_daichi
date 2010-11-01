@@ -2,8 +2,9 @@ KaisenDaichi::Application.routes.draw do
   resources :categories
 
   get "store/index"
+  get "store/suppliers"
   get "store" => "store#index" , :as => :store
-  post "store/add_to_cart/:id" => "store#add_to_cart"  
+  post "store/add_to_cart/:id" => "store#add_to_cart"
   post "store/empty_cart" => "store#empty_cart"
   post "store/remove_item_from_cart" => "store#remove_item_from_cart"
   resources :shops
