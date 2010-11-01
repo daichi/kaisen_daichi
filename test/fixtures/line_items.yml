@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  oeder: 
+  product: 
+  quantity: 1
+
+two:
+  oeder: 
+  product: 
+  quantity: 1

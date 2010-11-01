@@ -25,6 +25,7 @@ class Product < ActiveRecord::Base
     scope :active, :condition => {:deleted => nil}
   end
 
+  has_many :line_items
  # def category_name
  #   return category ? category.name : ""
  # end
